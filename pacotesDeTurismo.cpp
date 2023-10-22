@@ -41,14 +41,14 @@ class Pacote
 {
     private:
         string nome;
-        vector<Evento> listaEventos;
+        vector<Evento*> listaEventos;
 
     public:
         Pacote(/* args */);
         ~Pacote();
 
         Pacote(string _nome);
-        void adicionarEvento(Evento _evento);
+        void adicionarEvento(Evento &_evento);
 };
 
 Pacote::Pacote(/* args */)
@@ -63,8 +63,8 @@ Pacote::Pacote(string _nome) {
     nome = _nome;
 }
 
-void Pacote::adicionarEvento(Evento _evento) {
-    listaEventos.push_back(_evento);
+void Pacote::adicionarEvento(Evento &_evento) {
+    listaEventos.push_back(&_evento);
 }
 
 class Cliente
